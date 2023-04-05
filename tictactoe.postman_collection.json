@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "a0cb14cd-2873-4438-96c8-056ffe8b17c5",
+		"name": "tictactoe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9365997"
+	},
+	"item": [
+		{
+			"name": "levels",
+			"item": [
+				{
+					"name": "http://localhost:9090/levels/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/levels/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"levels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a level - starting state for a game",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"state\": [\r\n        \"___\",\r\n        \"_X_\",\r\n        \"O__\"\r\n    ],\r\n    \"setUp\": {\r\n        \"opponentSymbol\": \"O\",\r\n        \"emptySymbol\": \"_\",\r\n        \"dimension\": 3,\r\n        \"countToWin\": 3,\r\n        \"xplayerSymbol\": \"X\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/levels",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"levels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a level with new setUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"state\": [\r\n        \"___\",\r\n        \"_A_\",\r\n        \"B__\"\r\n    ],\r\n    \"setUp\": {\r\n        \"opponentSymbol\": \"B\",\r\n        \"emptySymbol\": \"_\",\r\n        \"dimension\": 3,\r\n        \"countToWin\": 3,\r\n        \"xplayerSymbol\": \"A\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/levels",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"levels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Not found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/levels/100",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"levels",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bad request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/levels/bla",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"levels",
+								"bla"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "players",
+			"item": []
+		},
+		{
+			"name": "games",
+			"item": []
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/ping",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
