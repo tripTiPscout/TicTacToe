@@ -28,6 +28,25 @@ public class GameTest {
     }
 
     @Test
+    public void findBestMoveNormal() {
+        char[][] state = {
+                {'_', '_', '_'},
+                {'O', 'X', '_'},
+                {'X', '_', '_'}
+        };
+
+        Move playerMove = new Move(1, 1, true);
+        Node newState = new Node(new GameSetUp(), state, playerMove);
+
+        Bot bot = new Bot(BotDifficulty.NORMAL);
+
+        Move originMove = new Move(0, 2, false);
+        Move botMove = bot.getNextMove(newState);
+
+        assertEquals(originMove, botMove);
+    }
+
+    @Test
     public void testEasyVsHardPlay() {
         Game game = new Game();
         game.setPlayer1(new Bot(BotDifficulty.EASY));
