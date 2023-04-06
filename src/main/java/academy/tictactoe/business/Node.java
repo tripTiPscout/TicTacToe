@@ -140,10 +140,10 @@ public class Node {
                 (int i, int j) -> { // Main diagonal - up
                     return this.state[i + j][j];
                 },
-                (int i, int j) -> { // Opposing diagonal - down
+                (int i, int j) -> { // Main diagonal - down
                     return this.state[j][i + j];
                 },
-                (int i, int j) -> { // Main diagonal - up
+                (int i, int j) -> { // Opposing diagonal - up
                     return this.state[i - j][j];
                 },
                 (int i, int j) -> { // Opposing diagonal - down
@@ -187,122 +187,6 @@ public class Node {
     interface WinnableSequence {
         char charAt(int start, int index);
     }
-
-    // Readable, but code repetition
-//    protected Character findWinner() {
-//
-//        char winSymbol;
-//        int countSame;
-//
-//
-//        for (int row = 0; row < setUp.getDimension(); row++) {
-//            winSymbol = this.state[row][0];
-//            countSame = 0;
-//            for (int column = 0; column < setUp.getDimension(); column++) {
-//                if (state[row][column] != setUp.getEmptySymbol() &&
-//                        state[row][column] == winSymbol) {
-//                    countSame = countSame + 1;
-//                } else {
-//                    winSymbol = state[row][column];
-//                    countSame = 1;
-//                }
-//                if (countSame == setUp.getCountToWin()) {
-//                    return winSymbol;
-//                }
-//            }
-//        }
-//
-//        //check for column win
-//        for (int column = 0; column < setUp.getDimension(); column++) {
-//            winSymbol = this.state[0][column];
-//            countSame = 0;
-//            for (int row = 0; row < setUp.getDimension(); row++) {
-//                if (state[row][column] != setUp.getEmptySymbol() &&
-//                        state[row][column] == winSymbol) {
-//                    countSame = countSame + 1;
-//                } else {
-//                    winSymbol = state[row][column];
-//                    countSame = 1;
-//                }
-//                if (countSame == setUp.getCountToWin()) {
-//                    return winSymbol;
-//                }
-//            }
-//        }
-//
-//        //check for win above main diagonal
-//        for (int row = 0; row < setUp.getDimension(); row++) {
-//            winSymbol = this.state[row][0];
-//            countSame = 0;
-//            for (int i = 0; i < setUp.getDimension(); i++) {
-//                int ipp = (row + i) % setUp.getDimension();
-//                if (state[ipp][ipp] != setUp.getEmptySymbol() &&
-//                        state[ipp][ipp] == winSymbol) {
-//                    countSame = countSame + 1;
-//                } else {
-//                    winSymbol = state[ipp][ipp];
-//                    countSame = 1;
-//                }
-//                if (countSame == setUp.getCountToWin()) {
-//                    return winSymbol;
-//                }
-//            }
-//        }
-//
-//        for (int row = 0; row < setUp.getDimension(); row++) {
-//            winSymbol = this.state[row][0];
-//            countSame = 0;
-//            for (int i = 0; i < setUp.getDimension(); i++) {
-//                int ipp = (setUp.getDimension() + row - i) % setUp.getDimension();
-//                if (state[ipp][ipp] != setUp.getEmptySymbol() &&
-//                        state[ipp][ipp] == winSymbol) {
-//                    countSame = countSame + 1;
-//                } else {
-//                    winSymbol = state[ipp][ipp];
-//                    countSame = 1;
-//                }
-//                if (countSame == setUp.getCountToWin()) {
-//                    return winSymbol;
-//                }
-//            }
-//        }
-//
-//        for (int row = setUp.getDimension() - 1; row <= 0; row--) {
-//            winSymbol = this.state[row][0];
-//            countSame = 0;
-//            for (int i = 0; i < setUp.getDimension(); i++) {
-//                if (state[row + i][row + i] != setUp.getEmptySymbol() &&
-//                        state[row + i][row + i] == winSymbol) {
-//                    countSame = countSame + 1;
-//                } else {
-//                    winSymbol = state[row + i][row + i];
-//                    countSame = 1;
-//                }
-//                if (countSame == setUp.getCountToWin()) {
-//                    return winSymbol;
-//                }
-//            }
-//        }
-//
-//        for (int row = setUp.getDimension() - 1; row <= 0; row--) {
-//            winSymbol = this.state[row][0];
-//            countSame = 0;
-//            for (int i = 0; i < setUp.getDimension(); i++) {
-//                if (state[row - i][row - i] != setUp.getEmptySymbol() &&
-//                        state[row - i][row - i] == winSymbol) {
-//                    countSame = countSame + 1;
-//                } else {
-//                    winSymbol = state[row - i][row - i];
-//                    countSame = 1;
-//                }
-//                if (countSame == setUp.getCountToWin()) {
-//                    return winSymbol;
-//                }
-//            }
-//        }
-//
-//        return null;
-//    }
 
     @Override
     public String toString() {
