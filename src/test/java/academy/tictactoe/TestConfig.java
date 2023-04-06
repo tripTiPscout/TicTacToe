@@ -24,8 +24,8 @@ public class TestConfig {
         return new GameSetUp(3, 3);
     }
 
-    @Primary
     @Bean
+    @Primary
     public Application getApplication() {
         return new Application();
     }
