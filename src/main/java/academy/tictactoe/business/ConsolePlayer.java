@@ -1,5 +1,6 @@
 package academy.tictactoe.business;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
@@ -9,6 +10,7 @@ public class ConsolePlayer implements Player {
 
     private final String name;
 
+    //@Autowired
     public ConsolePlayer(String name) {
         this.name = name;
     }

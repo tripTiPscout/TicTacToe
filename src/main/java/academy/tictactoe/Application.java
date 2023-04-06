@@ -13,6 +13,7 @@ public class Application {
 
     private final Game game;
 
+    // Instantiate bean
     @Autowired
     protected Application(Game game) {
         this.game = game;

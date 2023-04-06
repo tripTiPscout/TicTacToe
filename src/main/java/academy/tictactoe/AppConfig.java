@@ -4,11 +4,13 @@ import academy.tictactoe.business.Bot;
 import academy.tictactoe.business.BotDifficulty;
 import academy.tictactoe.business.Player;
 import academy.tictactoe.data.GameSetUp;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
+    //@Qualifier("consolePlayer") Player player;
 
     @Bean("difficulty")
     public BotDifficulty getDifficulty() {
@@ -17,7 +19,7 @@ public class AppConfig {
 
     @Bean("name")
     public String getPlayerName() {
-        return "Peter";
+        return "Console player";
     }
 
     @Bean("game_config")
