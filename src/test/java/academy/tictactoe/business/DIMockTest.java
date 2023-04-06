@@ -30,10 +30,10 @@ public class DIMockTest {
 
     @Test
     public void testGame() {
-        when(mockPlayer.getName()).thenReturn("Mock name");
+        Mockito.when(mockPlayer.getName()).thenReturn("Mock name");
 
         Move mockMove = new Move(3, 3, true);
-        when(mockPlayer.getNextMove(Mockito.any())).thenReturn(mockMove);
+        Mockito.when(mockPlayer.getNextMove(Mockito.any())).thenReturn(mockMove);
 
         game.play(1);
         Move move = game.getState().getOriginMove();
@@ -44,4 +44,3 @@ public class DIMockTest {
     }
 
 }
-
